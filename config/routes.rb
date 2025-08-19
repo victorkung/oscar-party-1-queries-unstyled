@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   get("/directors", { :controller => "directors", :action => "index" })
   get("/directors/:director_id", { :controller => "directors", :action => "show" })
+
+  get("/actors", { :controller => "actors", :action => "index" })
+  get("/actors/:path_id", { :controller => "actors", :action => "show" })
 end
