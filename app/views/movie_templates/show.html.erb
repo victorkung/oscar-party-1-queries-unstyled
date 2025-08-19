@@ -1,0 +1,40 @@
+<h1><%= @the_movie.title %></h1>
+
+<dl>
+  <dt>Image</dt>
+  <dd>
+    <img src="<%= @the_movie.image %>" width="250">
+  </dd>
+
+  <dt>Year</dt>
+  <dd>
+    <%= @the_movie.year %>
+  </dd>
+
+  <dt>Duration</dt>
+  <dd>
+    <%= @the_movie.duration %> minutes
+  </dd>
+
+  <dt>Description</dt>
+  <dd>
+    <%= @the_movie.description %>
+  </dd>
+
+  <dt>Director</dt>
+  <dd>
+    <% dir_id = @the_movie.director_id %>
+
+    <% matching_directors = Director.where({ :id => dir_id }) %>
+
+    <% the_director = matching_directors.at(0) %>
+
+    <%= the_director.first_name %> <%= the_director.last_name %>
+  </dd>
+
+
+  <dt>Internal ID</dt>
+  <dd>
+    <%= @the_movie.id %>
+  </dd>
+</dl>
